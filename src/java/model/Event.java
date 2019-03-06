@@ -27,10 +27,22 @@ public class Event implements Serializable {
     private Long id;
     private String message;
     private String author;
+    private String subject;
     @Temporal(TemporalType.DATE)
     private Date ended;
     @Temporal(TemporalType.DATE)
     private Date created;
+
+    public Event() {
+    }
+
+    public Event(String message, String author, String subject, Date ended, Date created) {
+        this.message = message;
+        this.author = author;
+        this.subject = subject;
+        this.ended = ended;
+        this.created = new Date();
+    }
 
     public Long getId() {
         return id;
@@ -38,6 +50,46 @@ public class Event implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public Date getEnded() {
+        return ended;
+    }
+
+    public void setEnded(Date ended) {
+        this.ended = ended;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 
     @Override
@@ -62,7 +114,7 @@ public class Event implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Event[ id=" + id + " ]";
+        return "Event{" + "id=" + id + ", message=" + message + ", author=" + author + ", subject=" + subject + ", ended=" + ended + ", created=" + created + '}';
     }
-    
+
 }
