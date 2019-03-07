@@ -12,7 +12,7 @@
         <h:form>
 
             <h:panelGrid columns="2">
-                
+
                 <h:outputLabel value="Event message"/>
                 <h:inputText value="#{eventController.message}"/>
 
@@ -21,18 +21,21 @@
 
                 <h:outputLabel value="Event date"/>
                 <h:inputText value="#{eventController.ended}"/>
+
+                <h:outputLabel id="subject" value="Subject"/>
                 
+                <h:selectOneMenu>
+
+                    <f:selectItem itemLabel="select" itemValue=""/>
+                    <f:selectItem itemLabel="Family" itemValue=""/>
+                    <f:selectItem itemLabel="Politics" itemValue=""/>
+                    <f:selectItem itemLabel="Space" itemValue=""/>
+                    <f:selectItem itemLabel="Sports" itemValue=""/>
+
+                </h:selectOneMenu>
+                
+                <h:commandButton value="Create" action="#{eventController.submit()}"/>
             </h:panelGrid>
-            
-            <h:selectOneMenu>
-                
-                <f:selectItem itemLabel="select" itemValue=""/>
-                <f:selectItem itemLabel="Family" itemValue=""/>
-                <f:selectItem itemLabel="Politics" itemValue=""/>
-                <f:selectItem itemLabel="Space" itemValue=""/>
-                <f:selectItem itemLabel="Sports" itemValue=""/>
-                
-            </h:selectOneMenu>
 
         </h:form>
     </h:body>
