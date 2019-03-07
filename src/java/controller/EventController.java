@@ -33,6 +33,22 @@ public class EventController {
     
     public void submit() {
         Event e = new Event(message, author, subject, ended);
+        
+        switch (this.subject) {
+            case "Family":
+                this.subject = "Family";
+                break;
+            case "Politics":
+                this.subject = "Politics";
+                break;
+            case "Space":
+                this.subject = "Space";
+                break;
+            case "Sports":
+                this.subject = "Sports";
+                break;
+        }
+        
         emanager.addEvent(e);
         events = emanager.getEvents();
     }

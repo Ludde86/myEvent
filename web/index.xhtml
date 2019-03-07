@@ -20,17 +20,18 @@
                 <h:inputText value="#{eventController.author}"/>
 
                 <h:outputLabel value="Event date"/>
-                <h:inputText value="#{eventController.ended}"/>
+                <h:inputText value="#{eventController.ended}">
+                    <f:convertDateTime pattern="dd-mm-yyyy"/>
+                </h:inputText>
 
                 <h:outputLabel id="subject" value="Subject"/>
-                
-                <h:selectOneMenu>
+                <h:selectOneMenu value="#{eventController.subject}">
 
                     <f:selectItem itemLabel="select" itemValue=""/>
-                    <f:selectItem itemLabel="Family" itemValue=""/>
-                    <f:selectItem itemLabel="Politics" itemValue=""/>
-                    <f:selectItem itemLabel="Space" itemValue=""/>
-                    <f:selectItem itemLabel="Sports" itemValue=""/>
+                    <f:selectItem itemLabel="Family" itemValue="Family"/>
+                    <f:selectItem itemLabel="Politics" itemValue="Politics"/>
+                    <f:selectItem itemLabel="Space" itemValue="Space"/>
+                    <f:selectItem itemLabel="Sports" itemValue="Sports"/>
 
                 </h:selectOneMenu>
                 
