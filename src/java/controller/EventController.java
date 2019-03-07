@@ -32,7 +32,7 @@ public class EventController {
     private List<Event> events;
     
     public void submit() {
-        Event e = new Event(message, author, subject, ended, created);
+        Event e = new Event(message, author, subject, ended);
         emanager.addEvent(e);
         events = emanager.getEvents();
     }

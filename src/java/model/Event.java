@@ -36,7 +36,7 @@ public class Event implements Serializable {
     public Event() {
     }
 
-    public Event(String message, String author, String subject, Date ended, Date created) {
+    public Event(String message, String author, String subject, Date ended) {
         this.message = message;
         this.author = author;
         this.subject = subject;

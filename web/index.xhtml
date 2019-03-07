@@ -1,12 +1,40 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>MyEvent</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h1>MyEvent</h1>
+
+        <h:form>
+
+            <h:panelGrid columns="2">
+                
+                <h:outputLabel value="Event message"/>
+                <h:inputText value="#{eventController.message}"/>
+
+                <h:outputLabel value="Event author"/>
+                <h:inputText value="#{eventController.author}"/>
+
+                <h:outputLabel value="Event date"/>
+                <h:inputText value="#{eventController.ended}"/>
+                
+            </h:panelGrid>
+            
+            <h:selectOneMenu>
+                
+                <f:selectItem itemLabel="select" itemValue=""/>
+                <f:selectItem itemLabel="Family" itemValue=""/>
+                <f:selectItem itemLabel="Politics" itemValue=""/>
+                <f:selectItem itemLabel="Space" itemValue=""/>
+                <f:selectItem itemLabel="Sports" itemValue=""/>
+                
+            </h:selectOneMenu>
+
+        </h:form>
     </h:body>
 </html>
 
