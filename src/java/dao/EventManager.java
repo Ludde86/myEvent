@@ -26,6 +26,10 @@ public class EventManager {
         em.persist(e);
     }
     
+    public void deleteEvent(Event e) {
+        em.remove(em.find(Event.class, e.getId()));
+    }
+    
     public List<Event> getEvents() {
         Query q = em.createQuery("select e from Event e");
         return q.getResultList();

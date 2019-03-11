@@ -14,19 +14,19 @@
 
             <h:panelGrid columns="2">
 
-                <h:outputLabel value="Event message"/>
-                <h:inputText value="#{eventController.message}"/>
+                <p:outputLabel value="Event message"/>
+                <p:inputText value="#{eventController.message}"/>
 
-                <h:outputLabel value="Event author"/>
-                <h:inputText value="#{eventController.author}"/>
+                <p:outputLabel value="Event author"/>
+                <p:inputText value="#{eventController.author}"/>
 
-                <h:outputLabel value="Event date"/>
-                <h:inputText value="#{eventController.ended}">
+                <p:outputLabel value="Event date"/>
+                <p:inputText value="#{eventController.ended}">
                     <f:convertDateTime pattern="dd-mm-yyyy"/>
-                </h:inputText>
+                </p:inputText>
 
-                <h:outputLabel for="subject" value="Subject"/>
-                <h:selectOneMenu value="#{eventController.subject}">
+                <p:outputLabel value="Subject"/>
+                <p:selectOneMenu value="#{eventController.subject}">
 
                     <f:selectItem itemLabel="select" itemValue=""/>
                     <f:selectItem itemLabel="Family" itemValue="Family"/>
@@ -34,18 +34,23 @@
                     <f:selectItem itemLabel="Space" itemValue="Space"/>
                     <f:selectItem itemLabel="Sports" itemValue="Sports"/>
 
-                </h:selectOneMenu>
+                </p:selectOneMenu>
 
-                <h:commandButton value="Create" action="#{eventController.submit()}"/>
+                <p:commandButton value="Create" action="#{eventController.submit()}"/>
             </h:panelGrid>
 
-            <h:dataTable value="#{eventController.events}" var="e">
-                <h:column>#{e.id}</h:column>
-                <h:column>#{e.message}</h:column>
-                <h:column>#{e.ended}</h:column>
-                <h:column>#{e.author}</h:column>
-                <h:column>#{e.created}</h:column>
-                </h:dataTable>
+            <p:dataTable value="#{eventController.events}" var="e">
+                <p:column headerText="#">#{e.id}</p:column>
+                <p:column headerText="EVENT">#{e.message}</p:column>
+                <p:column headerText="DATE">#{e.ended}</p:column>
+                <p:column headerText="AUTHOR">#{e.author}</p:column>
+                <p:column headerText="CREATED">#{e.created}</p:column>
+            
+                <p:column>
+                    <p:commandButton value="Delete" action="#{eventController.submitDel(e)}"/>
+                </p:column>
+            
+            </p:dataTable>
 
         </h:form>
         <br />

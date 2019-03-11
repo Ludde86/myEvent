@@ -51,7 +51,12 @@ public class EventController {
         }
         
         emanager.addEvent(e);
-        events = emanager.getEvents();
+        fillArray();
+    }
+    
+    public void submitDel(Event e) {
+        emanager.deleteEvent(e);
+        fillArray();
     }
 
     @PostConstruct
