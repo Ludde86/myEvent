@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>MyEvent</title>
     </h:head>
@@ -24,7 +25,7 @@
                     <f:convertDateTime pattern="dd-mm-yyyy"/>
                 </h:inputText>
 
-                <h:outputLabel id="subject" value="Subject"/>
+                <h:outputLabel for="subject" value="Subject"/>
                 <h:selectOneMenu value="#{eventController.subject}">
 
                     <f:selectItem itemLabel="select" itemValue=""/>
@@ -34,11 +35,21 @@
                     <f:selectItem itemLabel="Sports" itemValue="Sports"/>
 
                 </h:selectOneMenu>
-                
+
                 <h:commandButton value="Create" action="#{eventController.submit()}"/>
             </h:panelGrid>
 
+            <h:dataTable value="#{eventController.events}" var="e">
+                <h:column>#{e.id}</h:column>
+                <h:column>#{e.message}</h:column>
+                <h:column>#{e.ended}</h:column>
+                <h:column>#{e.author}</h:column>
+                <h:column>#{e.created}</h:column>
+                </h:dataTable>
+
         </h:form>
+        <br />
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
     </h:body>
 </html>
 

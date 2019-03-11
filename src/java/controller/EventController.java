@@ -8,6 +8,7 @@ package controller;
 import dao.EventManager;
 import java.util.Date;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -51,6 +52,11 @@ public class EventController {
         
         emanager.addEvent(e);
         events = emanager.getEvents();
+    }
+
+    @PostConstruct
+    public void fillArray() {
+        this.events = emanager.getEvents();
     }
     
     public EventController() {

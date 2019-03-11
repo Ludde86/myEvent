@@ -2,12 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="Java Challenges"/>
         <group>
             <file>file:/C:/Programmering/netbeans-workspace/myEvent/web/index.xhtml</file>
             <file>file:/C:/Programmering/netbeans-workspace/myEvent/src/java/dao/EventManager.java</file>
             <file>file:/C:/Programmering/netbeans-workspace/myEvent/src/java/model/Event.java</file>
             <file>file:/C:/Programmering/netbeans-workspace/myEvent/src/java/controller/EventController.java</file>
+        </group>
+        <group name="Java Challenges">
+            <file>file:/D:/Programmering/netbeans-projects/meEvent/src/java/model/Event.java</file>
+            <file>file:/D:/Programmering/netbeans-projects/meEvent/src/java/dao/EventManager.java</file>
+            <file>file:/D:/Programmering/netbeans-projects/meEvent/src/conf/persistence.xml</file>
+            <file>file:/D:/Programmering/netbeans-projects/meEvent/src/java/controller/EventController.java</file>
+            <file>file:/D:/Programmering/netbeans-projects/meEvent/web/index.xhtml</file>
         </group>
     </open-files>
 </project-private>
