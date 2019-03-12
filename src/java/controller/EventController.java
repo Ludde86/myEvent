@@ -6,6 +6,7 @@
 package controller;
 
 import dao.EventManager;
+import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -24,7 +25,7 @@ public class EventController {
 
     @Inject
     EventManager emanager;
-    
+
     private String message;
     private String author;
     private String subject;
@@ -35,10 +36,10 @@ public class EventController {
     private List<Event> eventsPol;
     private List<Event> eventsSpa;
     private List<Event> eventsSpo;
-    
+
     public void submit() {
         Event e = new Event(message, author, subject, ended);
-        
+
         switch (this.subject) {
             case "Family":
                 this.subject = "Family";
@@ -53,14 +54,24 @@ public class EventController {
                 this.subject = "Sports";
                 break;
         }
-        
+
         emanager.addEvent(e);
         fillArray();
     }
-    
+
     public void submitDel(Event e) {
         emanager.deleteEvent(e);
         fillArray();
+    }
+
+    public String edit(Event e) {
+        return "update";
+    }
+    
+    public void submitUpd(Event e) {
+        e.getId();
+        e.getCreated();
+        emanager.updateEvent(e);
     }
 
     @PostConstruct
@@ -71,7 +82,7 @@ public class EventController {
         eventsSpa = emanager.getSpaceEvents();
         eventsSpo = emanager.getSportsEvents();
     }
-    
+
     public EventController() {
     }
 
@@ -154,5 +165,5 @@ public class EventController {
     public void setEventsSpo(List<Event> eventsSpo) {
         this.eventsSpo = eventsSpo;
     }
-    
+
 }

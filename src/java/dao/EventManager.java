@@ -59,4 +59,8 @@ public class EventManager {
         return em.find(Event.class, id);
     }
     
+    public void updateEvent(Event e) {
+        em.merge(e);
+    }
+    
 }

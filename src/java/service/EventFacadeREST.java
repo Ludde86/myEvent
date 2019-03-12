@@ -27,7 +27,7 @@ import model.Event;
  * @author Ludde
  */
 @Stateless
-@Path("event")
+@Path("/event")
 public class EventFacadeREST extends AbstractFacade<Event> {
 
     @PersistenceContext(unitName = "myEventPU")
@@ -51,7 +51,7 @@ public class EventFacadeREST extends AbstractFacade<Event> {
     @Path("{id}")
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void edit(@PathParam("id") Long id, Event entity) {
-        super.edit(entity);
+        emanager.updateEvent(entity);
     }
 
     @DELETE
