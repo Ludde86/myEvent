@@ -35,4 +35,28 @@ public class EventManager {
         return q.getResultList();
     }
     
+    public List<Event> getFamilyEvents() {
+        Query q = em.createQuery("SELECT e FROM Event e WHERE e.subject = 'Family'");
+        return q.getResultList();
+    }
+    
+    public List<Event> getPoliticsEvents() {
+        Query q = em.createQuery("SELECT e FROM Event e WHERE e.subject = 'Politics'");
+        return q.getResultList();
+    }
+    
+    public List<Event> getSpaceEvents() {
+        Query q = em.createQuery("SELECT e FROM Event e WHERE e.subject = 'Space'");
+        return q.getResultList();
+    }
+    
+    public List<Event> getSportsEvents() {
+        Query q = em.createQuery("SELECT e FROM Event e WHERE e.subject = 'Sports'");
+        return q.getResultList();
+    }
+    
+    public Event findEvent(Long id) {
+        return em.find(Event.class, id);
+    }
+    
 }

@@ -8,7 +8,7 @@
         <title>MyEvent</title>
     </h:head>
     <h:body>
-        <h1>MyEvent</h1>
+        <h1>MyEvents</h1>
 
         <h:form>
 
@@ -21,8 +21,8 @@
                 <p:inputText value="#{eventController.author}"/>
 
                 <p:outputLabel value="Event date"/>
-                <p:inputText value="#{eventController.ended}">
-                    <f:convertDateTime pattern="dd-mm-yyyy"/>
+                <p:inputText placeholder="(yyyy-mm-dd)" value="#{eventController.ended}">
+                    <f:convertDateTime pattern="yyyy-mm-dd"/>
                 </p:inputText>
 
                 <p:outputLabel value="Subject"/>
@@ -54,7 +54,7 @@
 
         </h:form>
         <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+        <a href="http://localhost:8080/myEvent/faces/log.xhtml">Menu</a>
     </h:body>
 </html>
 

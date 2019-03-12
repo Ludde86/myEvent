@@ -5,8 +5,10 @@
  */
 package service;
 
+import dao.EventManager;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
@@ -25,12 +27,15 @@ import model.Event;
  * @author Ludde
  */
 @Stateless
-@Path("model.event")
+@Path("event")
 public class EventFacadeREST extends AbstractFacade<Event> {
 
     @PersistenceContext(unitName = "myEventPU")
     private EntityManager em;
 
+    @Inject
+    EventManager emanager;
+    
     public EventFacadeREST() {
         super(Event.class);
     }
@@ -38,8 +43,8 @@ public class EventFacadeREST extends AbstractFacade<Event> {
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(Event entity) {
-        super.create(entity);
+    public void create(Event e) {
+        emanager.addEvent(e);
     }
 
     @PUT
@@ -59,14 +64,14 @@ public class EventFacadeREST extends AbstractFacade<Event> {
     @Path("{id}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Event find(@PathParam("id") Long id) {
-        return super.find(id);
+        return emanager.findEvent(id);
     }
 
     @GET
     @Override
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public List<Event> findAll() {
-        return super.findAll();
+        return emanager.getEvents();
     }
 
     @GET

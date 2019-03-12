@@ -31,6 +31,10 @@ public class EventController {
     private Date ended;
     private Date created;
     private List<Event> events;
+    private List<Event> eventsFam;
+    private List<Event> eventsPol;
+    private List<Event> eventsSpa;
+    private List<Event> eventsSpo;
     
     public void submit() {
         Event e = new Event(message, author, subject, ended);
@@ -61,7 +65,11 @@ public class EventController {
 
     @PostConstruct
     public void fillArray() {
-        this.events = emanager.getEvents();
+        events = emanager.getEvents();
+        eventsFam = emanager.getFamilyEvents();
+        eventsPol = emanager.getPoliticsEvents();
+        eventsSpa = emanager.getSpaceEvents();
+        eventsSpo = emanager.getSportsEvents();
     }
     
     public EventController() {
@@ -113,6 +121,38 @@ public class EventController {
 
     public void setEvents(List<Event> events) {
         this.events = events;
+    }
+
+    public List<Event> getEventsFam() {
+        return eventsFam;
+    }
+
+    public void setEventsFam(List<Event> eventsFam) {
+        this.eventsFam = eventsFam;
+    }
+
+    public List<Event> getEventsPol() {
+        return eventsPol;
+    }
+
+    public void setEventsPol(List<Event> eventsPol) {
+        this.eventsPol = eventsPol;
+    }
+
+    public List<Event> getEventsSpa() {
+        return eventsSpa;
+    }
+
+    public void setEventsSpa(List<Event> eventsSpa) {
+        this.eventsSpa = eventsSpa;
+    }
+
+    public List<Event> getEventsSpo() {
+        return eventsSpo;
+    }
+
+    public void setEventsSpo(List<Event> eventsSpo) {
+        this.eventsSpo = eventsSpo;
     }
     
 }

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    Header
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    <a href="http://localhost:8080/myEvent/faces/index.xhtml">Back to Event Management</a>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Hide Log Menu" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="My Space Logs">
+                            <p:menuitem value="Family" url="http://localhost:8080/myEvent/faces/family.xhtml" />
+                            <p:menuitem value="Politics" url="http://localhost:8080/myEvent/faces/politics.xhtml" />
+                            <p:menuitem value="Space" url="http://localhost:8080/myEvent/faces/space.xhtml" />
+                            <p:menuitem value="Sports" url="http://localhost:8080/myEvent/faces/sports.xhtml" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+
+                    <h3>My Logs</h3>
+
+                    <p:dataTable value="#{eventController.eventsSpa}" var="e">
+                        <p:column headerText="#">#{e.id}</p:column>
+                        <p:column headerText="EVENT">#{e.message}</p:column>
+                        <p:column headerText="DATE">#{e.ended}</p:column>
+                        <p:column headerText="AUTHOR">#{e.author}</p:column>
+                        <p:column headerText="CREATED">#{e.created}</p:column>
+
+                        <p:column>
+                            <p:commandButton value="Delete" action="#{eventController.submitDel(e)}"/>
+                        </p:column>
+
+                    </p:dataTable>
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
