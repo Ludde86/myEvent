@@ -22,7 +22,6 @@
 
                 <p:outputLabel value="Event date"/>
                 <p:inputText placeholder="yyyy-mm-dd" value="#{eventController.ended}">
-                    <f:convertDateTime dateStyle="full" pattern="yyyy-mm-dd"/>
 
                     <h:outputText value="#{eventController.ended}">  
                         <f:convertDateTime type="date" dateStyle="medium"/> 
@@ -41,7 +40,7 @@
 
                 </p:selectOneMenu>
 
-                <p:commandButton value="Create" action="#{eventController.submit()}"/>
+                <p:commandButton value="Create" action="#{eventController.submit}"/>
             </h:panelGrid>
 
             <p:dataTable value="#{eventController.events}" var="e">
@@ -53,7 +52,6 @@
 
                 <p:column>
                     <p:commandButton value="Edit" action="#{eventController.edit(e)}"/>
-                    <h:commandLink value = "Page 1" action = "update" /> 
                     <p:commandButton value="Delete" action="#{eventController.submitDel(e)}"/>
                 </p:column>
 

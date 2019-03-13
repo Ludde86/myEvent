@@ -6,12 +6,11 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -29,20 +28,18 @@ public class Event implements Serializable {
     private String message;
     private String author;
     private String subject;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date ended;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date created;
+    private LocalDate ended;
+    private LocalDate created;
 
     public Event() {
     }
 
-    public Event(String message, String author, String subject, Date ended) {
+    public Event(String message, String author, String subject, LocalDate ended) {
         this.message = message;
         this.author = author;
         this.subject = subject;
         this.ended = ended;
-        this.created = new Date();
+        this.created = LocalDate.now();
     }
 
     public Long getId() {
@@ -77,19 +74,19 @@ public class Event implements Serializable {
         this.subject = subject;
     }
 
-    public Date getEnded() {
+    public LocalDate getEnded() {
         return ended;
     }
 
-    public void setEnded(Date ended) {
+    public void setEnded(LocalDate ended) {
         this.ended = ended;
     }
 
-    public Date getCreated() {
+    public LocalDate getCreated() {
         return created;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(LocalDate created) {
         this.created = created;
     }
 

@@ -22,8 +22,6 @@
 
                 <p:outputLabel value="Event date"/>
                 <p:inputText placeholder="yyyy-mm-dd" value="#{eventController.ended}">
-                    <f:convertDateTime dateStyle="full" pattern="yyyy-mm-dd"/>
-
                     <h:outputText value="#{eventController.ended}">  
                         <f:convertDateTime type="date" dateStyle="medium"/> 
                     </h:outputText>
@@ -40,8 +38,12 @@
                     <f:selectItem itemLabel="Sports" itemValue="Sports"/>
 
                 </p:selectOneMenu>
+                
+                <f:metadata>
+                    <f:viewParam name="id" value="#{eventController.id}"></f:viewParam>
+                </f:metadata>
 
-                <p:commandButton value="Update" action="#{eventController.submitUpd(e)}"/>
+                <p:commandButton value="Update" action="#{eventController.submitUpd}"/>
             </h:panelGrid>
 
 

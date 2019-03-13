@@ -6,14 +6,14 @@
 package controller;
 
 import dao.EventManager;
-import java.sql.Time;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 import javax.inject.Inject;
 import model.Event;
+import org.primefaces.component.outputlabel.OutputLabel;
 
 /**
  *
@@ -29,17 +29,20 @@ public class EventController {
     private String message;
     private String author;
     private String subject;
-    private Date ended;
-    private Date created;
+    private String ended;
+    private String created;
     private List<Event> events;
     private List<Event> eventsFam;
     private List<Event> eventsPol;
     private List<Event> eventsSpa;
     private List<Event> eventsSpo;
+    
+    private String id;
 
+    
     public void submit() {
-        Event e = new Event(message, author, subject, ended);
-
+        Event e = new Event(message, author, subject, LocalDate.parse(ended));
+        
         switch (this.subject) {
             case "Family":
                 this.subject = "Family";
@@ -65,13 +68,13 @@ public class EventController {
     }
 
     public String edit(Event e) {
-        return "update";
+        return "update?faces-redirect=true&id=" + e.getId();
     }
     
-    public void submitUpd(Event e) {
-        e.getId();
-        e.getCreated();
-        emanager.updateEvent(e);
+    public void submitUpd() {
+       Event event = new Event(message, author, subject, LocalDate.parse(ended));
+       event.setId(Long.parseLong(id));
+        emanager.updateEvent(event);
     }
 
     @PostConstruct
@@ -110,19 +113,19 @@ public class EventController {
         this.subject = subject;
     }
 
-    public Date getEnded() {
+    public String getEnded() {
         return ended;
     }
 
-    public void setEnded(Date ended) {
+    public void setEnded(String ended) {
         this.ended = ended;
     }
 
-    public Date getCreated() {
+    public String getCreated() {
         return created;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(String created) {
         this.created = created;
     }
 
@@ -166,4 +169,13 @@ public class EventController {
         this.eventsSpo = eventsSpo;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    
 }
