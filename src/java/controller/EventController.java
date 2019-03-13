@@ -68,12 +68,13 @@ public class EventController {
     }
 
     public String edit(Event e) {
-        return "update?faces-redirect=true&id=" + e.getId();
+        return "update?faces-redirect=true&id=" + e.getId() + "&created=" + e.getCreated();
     }
     
     public void submitUpd() {
        Event event = new Event(message, author, subject, LocalDate.parse(ended));
        event.setId(Long.parseLong(id));
+       event.setCreated(LocalDate.parse(created));
         emanager.updateEvent(event);
     }
 
