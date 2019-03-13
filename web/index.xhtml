@@ -40,10 +40,10 @@
 
                 </p:selectOneMenu>
 
-                <p:commandButton value="Create" action="#{eventController.submit}"/>
+                <p:commandButton value="Create" action="#{eventController.submit}" update="eventlist"/>
             </h:panelGrid>
 
-            <p:dataTable value="#{eventController.events}" var="e">
+            <p:dataTable value="#{eventController.events}" var="e" id="eventlist">
                 <p:column headerText="#">#{e.id}</p:column>
                 <p:column headerText="EVENT">#{e.message}</p:column>
                 <p:column headerText="DATE">#{e.ended}</p:column>
@@ -52,7 +52,7 @@
 
                 <p:column>
                     <p:commandButton value="Edit" action="#{eventController.edit(e)}"/>
-                    <p:commandButton value="Delete" action="#{eventController.submitDel(e)}"/>
+                    <p:commandButton value="Delete" action="#{eventController.submitDel(e)}" update="eventlist"/>
                 </p:column>
 
             </p:dataTable>
