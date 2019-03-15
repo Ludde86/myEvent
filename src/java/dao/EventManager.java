@@ -55,6 +55,11 @@ public class EventManager {
         return q.getResultList();
     }
     
+    public List<Event> getOtherEvents() {
+        Query q = em.createQuery("SELECT e FROM Event e WHERE e.subject = 'Other'");
+        return q.getResultList();
+    }
+    
     public Event findEvent(Long id) {
         return em.find(Event.class, id);
     }

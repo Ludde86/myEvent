@@ -18,27 +18,27 @@
             <p:layout fullPage="true">
 
                 <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
-                    <a href="http://localhost:8080/myEvent/faces/index.xhtml">Back to Event Management</a><br/>
-                    <a href="http://localhost:8080/myEvent/rest/event/">Rest</a>
+                    <a href="http://localhost:8080/myEvent/faces/index.xhtml" style="font-family: monospace">Back to Event Management</a><br/>
+                    <a href="http://localhost:8080/myEvent/rest/event/" style="font-family: monospace">Rest</a>
                 </p:layoutUnit>
 
                 <p:layoutUnit position="west" size="175" header="Hide Log Menu" collapsible="true">
                     <p:menu>
-                        <p:submenu label="My Family Logs">
+                        <p:submenu label="My Other Logs">
                             <p:menuitem value="My Logs" url="http://localhost:8080/myEvent/faces/log.xhtml" />
+                            <p:menuitem value="Family" url="http://localhost:8080/myEvent/faces/family.xhtml" />
                             <p:menuitem value="Politics" url="http://localhost:8080/myEvent/faces/politics.xhtml" />
                             <p:menuitem value="Space" url="http://localhost:8080/myEvent/faces/space.xhtml" />
                             <p:menuitem value="Sports" url="http://localhost:8080/myEvent/faces/sports.xhtml" />
-                            <p:menuitem value="Other" url="http://localhost:8080/myEvent/faces/other.xhtml" />
                         </p:submenu>
                     </p:menu>
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center">
 
-                    <h3>My Family Logs</h3>
+                    <h3>My Other Logs</h3>
 
-                    <p:dataTable value="#{eventController.eventsFam}" var="e">
+                    <p:dataTable value="#{eventController.eventsOth}" var="e">
                         <p:column headerText="#">#{e.id}</p:column>
                         <p:column headerText="EVENT">#{e.message}</p:column>
                         <p:column headerText="DATE">#{e.ended}</p:column>

@@ -11,22 +11,15 @@
         <h1>MyEvents</h1>
 
         <h:form>
-
             <h:panelGrid columns="2">
-
                 <p:outputLabel value="Event message"/>
-                <p:inputText placeholder="#{eventController.message}" value="#{eventController.message}"/>
+                <p:inputText style="font-family: serif" value="#{eventController.message}"/>
 
                 <p:outputLabel value="Event author"/>
-                <p:inputText value="#{eventController.author}"/>
+                <p:inputText style="font-family: serif" value="#{eventController.author}"/>
 
                 <p:outputLabel value="Event date"/>
-                <p:inputText placeholder="yyyy-mm-dd" value="#{eventController.ended}">
-                    <h:outputText value="#{eventController.ended}">  
-                        <f:convertDateTime type="date" dateStyle="medium"/> 
-                    </h:outputText>
-
-                </p:inputText>
+                <p:inputText style="font-family: serif" value="#{eventController.ended}"/>
 
                 <p:outputLabel value="Subject"/>
                 <p:selectOneMenu value="#{eventController.subject}">
@@ -36,22 +29,25 @@
                     <f:selectItem itemLabel="Politics" itemValue="Politics"/>
                     <f:selectItem itemLabel="Space" itemValue="Space"/>
                     <f:selectItem itemLabel="Sports" itemValue="Sports"/>
+                    <f:selectItem itemLabel="Other" itemValue="Other"/>
 
                 </p:selectOneMenu>
-                
-                <f:metadata>
-                    <f:viewParam name="id" value="#{eventController.id}"></f:viewParam>
-                    <f:viewParam name="created" value="#{eventController.created}"></f:viewParam>
-                </f:metadata>
 
                 <p:commandButton value="Update" action="#{eventController.submitUpd}"/>
             </h:panelGrid>
 
-
+            <f:metadata>
+                <f:viewParam name="id" value="#{eventController.id}"/>
+                <f:viewParam name="created" value="#{eventController.created}"/>
+                <f:viewParam name="message" value="#{eventController.message}"/>
+                <f:viewParam name="author" value="#{eventController.author}"/>
+                <f:viewParam name="ended" value="#{eventController.ended}"/>
+                <f:viewParam name="subject" value="#{eventController.subject}"/>
+            </f:metadata>
 
         </h:form>
-        <br />
-        <a href="http://localhost:8080/myEvent/faces/log.xhtml">MyEvent</a>
+        <br/><a href="http://localhost:8080/myEvent/faces/index.xhtml" style="font-family: monospace">Back to Event Management</a><br/>
+        <a href="http://localhost:8080/myEvent/faces/log.xhtml" style="font-family: monospace">MyEvent</a>
     </h:body>
 </html>
 

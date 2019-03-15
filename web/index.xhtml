@@ -15,19 +15,13 @@
             <h:panelGrid columns="2">
 
                 <p:outputLabel value="Event message"/>
-                <p:inputText value="#{eventController.message}"/>
+                <p:inputText style="font-family: serif" placeholder="message" value="#{eventController.message}"/>
 
                 <p:outputLabel value="Event author"/>
-                <p:inputText value="#{eventController.author}"/>
+                <p:inputText style="font-family: serif" placeholder="author" value="#{eventController.author}"/>
 
                 <p:outputLabel value="Event date"/>
-                <p:inputText placeholder="yyyy-mm-dd" value="#{eventController.ended}">
-
-                    <h:outputText value="#{eventController.ended}">  
-                        <f:convertDateTime type="date" dateStyle="medium"/> 
-                    </h:outputText>
-
-                </p:inputText>
+                <p:inputText style="font-family: serif" placeholder="yyyy-mm-dd" value="#{eventController.ended}"/>
 
                 <p:outputLabel value="Subject"/>
                 <p:selectOneMenu value="#{eventController.subject}">
@@ -37,14 +31,15 @@
                     <f:selectItem itemLabel="Politics" itemValue="Politics"/>
                     <f:selectItem itemLabel="Space" itemValue="Space"/>
                     <f:selectItem itemLabel="Sports" itemValue="Sports"/>
+                    <f:selectItem itemLabel="Other" itemValue="Other"/>
 
                 </p:selectOneMenu>
 
-                <p:commandButton value="Create" action="#{eventController.submit}" update="eventlist"/>
+                <p:commandButton value="Create" action="#{eventController.submit}" update="fillArray"/>
             </h:panelGrid>
 
-            <p:dataTable value="#{eventController.events}" var="e" id="eventlist">
-                <p:column headerText="#">#{e.id}</p:column>
+            <p:dataTable value="#{eventController.events}" var="e" id="fillArray">
+                <p:column headerText="ID">#{e.id}</p:column>
                 <p:column headerText="EVENT">#{e.message}</p:column>
                 <p:column headerText="DATE">#{e.ended}</p:column>
                 <p:column headerText="AUTHOR">#{e.author}</p:column>
@@ -52,14 +47,11 @@
 
                 <p:column>
                     <p:commandButton value="Edit" action="#{eventController.edit(e)}"/>
-                    <p:commandButton value="Delete" action="#{eventController.submitDel(e)}" update="eventlist"/>
+                    <p:commandButton value="Delete" action="#{eventController.submitDel(e)}" update="fillArray"/>
                 </p:column>
-
             </p:dataTable>
-
         </h:form>
-        <br />
-        <a href="http://localhost:8080/myEvent/faces/log.xhtml">MyEvent</a>
+        <br/><a href="http://localhost:8080/myEvent/faces/log.xhtml">MyEvent</a>
     </h:body>
 </html>
 

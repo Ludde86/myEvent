@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import dao.EventManager;
@@ -13,7 +8,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.inject.Inject;
 import model.Event;
-import org.primefaces.component.outputlabel.OutputLabel;
 
 /**
  *
@@ -36,13 +30,13 @@ public class EventController {
     private List<Event> eventsPol;
     private List<Event> eventsSpa;
     private List<Event> eventsSpo;
-    
+    private List<Event> eventsOth;
+
     private String id;
 
-    
     public void submit() {
         Event e = new Event(message, author, subject, LocalDate.parse(ended));
-        
+
         switch (this.subject) {
             case "Family":
                 this.subject = "Family";
@@ -56,6 +50,9 @@ public class EventController {
             case "Sports":
                 this.subject = "Sports";
                 break;
+            case "Other":
+                this.subject = "Other";
+                break;
         }
 
         emanager.addEvent(e);
@@ -68,14 +65,16 @@ public class EventController {
     }
 
     public String edit(Event e) {
-        return "update?faces-redirect=true&id=" + e.getId() + "&created=" + e.getCreated();
+        return "update?faces-redirect=true&id=" + e.getId() + "&created=" + e.getCreated() + "&message=" 
+                + e.getMessage() + "&author=" + e.getAuthor() + "&ended=" + e.getEnded() + "&subject=" + e.getSubject();
     }
-    
-    public void submitUpd() {
-       Event event = new Event(message, author, subject, LocalDate.parse(ended));
-       event.setId(Long.parseLong(id));
-       event.setCreated(LocalDate.parse(created));
-        emanager.updateEvent(event);
+
+    public String submitUpd() {
+        Event newE = new Event(message, author, subject, LocalDate.parse(ended));
+        newE.setId(Long.parseLong(id));
+        newE.setCreated(LocalDate.parse(created));
+        emanager.updateEvent(newE);
+        return "updated";
     }
 
     @PostConstruct
@@ -85,6 +84,7 @@ public class EventController {
         eventsPol = emanager.getPoliticsEvents();
         eventsSpa = emanager.getSpaceEvents();
         eventsSpo = emanager.getSportsEvents();
+        eventsOth = emanager.getOtherEvents();
     }
 
     public EventController() {
@@ -178,5 +178,12 @@ public class EventController {
         this.id = id;
     }
 
-    
+    public List<Event> getEventsOth() {
+        return eventsOth;
+    }
+
+    public void setEventsOth(List<Event> eventsOth) {
+        this.eventsOth = eventsOth;
+    }
+
 }
