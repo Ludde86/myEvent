@@ -57,7 +57,7 @@ public class EventFacadeREST extends AbstractFacade<Event> {
 
     @GET
     @Path("{id}")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Event find(@PathParam("id") Long id) {
         return emanager.findEvent(id);
     }

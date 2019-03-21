@@ -9,12 +9,7 @@
         </group>
         <group>
             <file>file:/C:/Programmering/netbeans-workspace/myEvent/web/index.xhtml</file>
-            <file>file:/C:/Programmering/netbeans-workspace/myEvent/web/update.xhtml</file>
             <file>file:/C:/Programmering/netbeans-workspace/myEvent/src/java/service/EventFacadeREST.java</file>
-            <file>file:/C:/Programmering/netbeans-workspace/myEvent/src/java/dao/EventManager.java</file>
-            <file>file:/C:/Programmering/netbeans-workspace/myEvent/src/java/dao/LocalDateConverter.java</file>
-            <file>file:/C:/Programmering/netbeans-workspace/myEvent/src/java/controller/EventController.java</file>
-            <file>file:/C:/Programmering/netbeans-workspace/myEvent/src/java/model/Event.java</file>
         </group>
     </open-files>
 </project-private>
