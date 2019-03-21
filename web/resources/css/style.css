@@ -1,0 +1,35 @@
+body{
+    background-color: darkgray;
+}
+.layoutUnit-1{
+    background-color: darkgray;
+}
+div{
+    font-family: monospace;
+}
+.div-1{
+    font-family: monospace;
+}
+
+.dataTable-1{
+    font-family: monospace;
+}
+h1{
+    font-family: monospace;
+}
+.myLayoutStyleClass .ui-layout-unit-header{
+    background: whitesmoke;
+}
+
+.myLayoutStyleClass .ui-layout-unit-content{
+   background: lightgray;
+}
+h3{
+    margin-left: 10px;
+}
+.form-1 input{
+    font-family: monospace;
+}
+.form-1 label{
+    font-family: monospace;
+}
