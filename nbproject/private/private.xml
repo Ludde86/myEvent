@@ -2,14 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="Java Challenges">
-            <file>file:/D:/Programmering/netbeans-projects/meEvent/web/log.xhtml</file>
-            <file>file:/D:/Programmering/netbeans-projects/meEvent/web/index.xhtml</file>
-            <file>file:/D:/Programmering/netbeans-projects/meEvent/web/family.html</file>
-        </group>
         <group>
             <file>file:/C:/Programmering/netbeans-workspace/myEvent/web/index.xhtml</file>
             <file>file:/C:/Programmering/netbeans-workspace/myEvent/src/java/service/EventFacadeREST.java</file>
+        </group>
+        <group name="Java Challenges">
+            <file>file:/D:/Programmering/netbeans-projects/myEvent/web/resources/css/style.css</file>
+            <file>file:/D:/Programmering/netbeans-projects/myEvent/web/log.xhtml</file>
+            <file>file:/D:/Programmering/netbeans-projects/myEvent/web/update.xhtml</file>
+            <file>file:/D:/Programmering/netbeans-projects/myEvent/web/index.xhtml</file>
         </group>
     </open-files>
 </project-private>

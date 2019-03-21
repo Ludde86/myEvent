@@ -10,6 +10,7 @@
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
                 <title>MyEvent</title>
+                <h:outputStylesheet library="css" name="style.css"/>
             </f:facet>
         </h:head>
 
@@ -17,12 +18,12 @@
 
             <p:layout fullPage="true">
 
-                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                <p:layoutUnit class="myLayoutStyleClass" position="south" size="100" closable="true" collapsible="true">
                     <a href="http://localhost:8080/myEvent/faces/index.xhtml" style="font-family: monospace">Back to Event Management</a><br/>
                     <a href="http://localhost:8080/myEvent/rest/event/" style="font-family: monospace">Rest</a>
                 </p:layoutUnit>
 
-                <p:layoutUnit position="west" size="175" header="Hide Log Menu" collapsible="true">
+                <p:layoutUnit class="myLayoutStyleClass" position="west" size="175" header="Hide Log Menu" collapsible="true">
                     <p:menu>
                         <p:submenu label="MyEvent">
                             <p:menuitem value="Family" url="http://localhost:8080/myEvent/faces/family.xhtml" />
@@ -36,7 +37,7 @@
                     </p:menu>
                 </p:layoutUnit>
 
-                <p:layoutUnit position="center">
+                <p:layoutUnit class="myLayoutStyleClass" position="center">
                     
                     <h3>MyEvent</h3>
                     

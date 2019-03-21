@@ -6,45 +6,47 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>MyEvent</title>
+        <h:outputStylesheet library="css" name="style.css"/>
     </h:head>
     <h:body>
         <h1>MyEvents</h1>
 
-        <h:form>
-            <h:panelGrid columns="2">
-                <p:outputLabel value="Event message"/>
-                <p:inputText style="font-family: serif" value="#{eventController.message}"/>
+        <h:form class="form-1">
+            <div class="box-1">
+                <h:panelGrid columns="2">
+                    <p:outputLabel class="box-1" value="Event message"/>
+                    <p:inputText class="box-1" value="#{eventController.message}"/>
 
-                <p:outputLabel value="Event author"/>
-                <p:inputText style="font-family: serif" value="#{eventController.author}"/>
+                    <p:outputLabel class="box-1" value="Event author"/>
+                    <p:inputText class="box-1" value="#{eventController.author}"/>
 
-                <p:outputLabel value="Event date"/>
-                <p:inputText style="font-family: serif" value="#{eventController.ended}"/>
+                    <p:outputLabel class="box-1" value="Event date"/>
+                    <p:inputText class="box-1" value="#{eventController.ended}"/>
 
-                <p:outputLabel value="Subject"/>
-                <p:selectOneMenu value="#{eventController.subject}">
+                    <p:outputLabel class="box-1" value="Subject"/>
+                    <p:selectOneMenu class="box-1" value="#{eventController.subject}">
 
-                    <f:selectItem itemLabel="select" itemValue=""/>
-                    <f:selectItem itemLabel="Family" itemValue="Family"/>
-                    <f:selectItem itemLabel="Politics" itemValue="Politics"/>
-                    <f:selectItem itemLabel="Space" itemValue="Space"/>
-                    <f:selectItem itemLabel="Sports" itemValue="Sports"/>
-                    <f:selectItem itemLabel="Other" itemValue="Other"/>
+                        <f:selectItem itemLabel="select" itemValue=""/>
+                        <f:selectItem itemLabel="Family" itemValue="Family"/>
+                        <f:selectItem itemLabel="Politics" itemValue="Politics"/>
+                        <f:selectItem itemLabel="Space" itemValue="Space"/>
+                        <f:selectItem itemLabel="Sports" itemValue="Sports"/>
+                        <f:selectItem itemLabel="Other" itemValue="Other"/>
 
-                </p:selectOneMenu>
+                    </p:selectOneMenu>
 
-                <p:commandButton value="Update" action="#{eventController.submitUpd}"/>
-            </h:panelGrid>
+                    <p:commandButton class="box-1" value="Update" action="#{eventController.submitUpd}"/>
+                </h:panelGrid>
 
-            <f:metadata>
-                <f:viewParam name="id" value="#{eventController.id}"/>
-                <f:viewParam name="created" value="#{eventController.created}"/>
-                <f:viewParam name="message" value="#{eventController.message}"/>
-                <f:viewParam name="author" value="#{eventController.author}"/>
-                <f:viewParam name="ended" value="#{eventController.ended}"/>
-                <f:viewParam name="subject" value="#{eventController.subject}"/>
-            </f:metadata>
-
+                <f:metadata>
+                    <f:viewParam name="id" value="#{eventController.id}"/>
+                    <f:viewParam name="created" value="#{eventController.created}"/>
+                    <f:viewParam name="message" value="#{eventController.message}"/>
+                    <f:viewParam name="author" value="#{eventController.author}"/>
+                    <f:viewParam name="ended" value="#{eventController.ended}"/>
+                    <f:viewParam name="subject" value="#{eventController.subject}"/>
+                </f:metadata>
+            </div>
         </h:form>
         <br/><a href="http://localhost:8080/myEvent/faces/index.xhtml" style="font-family: monospace">Back to Event Management</a><br/>
         <a href="http://localhost:8080/myEvent/faces/log.xhtml" style="font-family: monospace">MyEvent</a>

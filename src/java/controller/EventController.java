@@ -34,7 +34,7 @@ public class EventController {
 
     private String id;
 
-    public void submit() {
+    public String submit() {
         Event e = new Event(message, author, subject, LocalDate.parse(ended));
 
         switch (this.subject) {
@@ -57,6 +57,7 @@ public class EventController {
 
         emanager.addEvent(e);
         fillArray();
+        return "created";
     }
 
     public void submitDel(Event e) {
