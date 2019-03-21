@@ -11,21 +11,21 @@
     <h:body>
         <h1>MyEvents</h1>
 
-        <h:form>
+        <h:form class="form-1">
             
                 <h:panelGrid columns="2">
 
                     <p:outputLabel value="Event message"/>
                     <p:inputText placeholder="message" value="#{eventController.message}"/>
 
-                    <p:outputLabel class="outputLabel-1" value="Event author"/>
-                    <p:inputText class="inputText-1" placeholder="author" value="#{eventController.author}"/>
+                    <p:outputLabel value="Event author"/>
+                    <p:inputText placeholder="author" value="#{eventController.author}"/>
 
-                    <p:outputLabel class="outputLabel-1" value="Event date"/>
-                    <p:inputText class="inputText-1" placeholder="yyyy-mm-dd" value="#{eventController.ended}"/>
+                    <p:outputLabel value="Event date"/>
+                    <p:inputText placeholder="yyyy-mm-dd" value="#{eventController.ended}"/>
 
-                    <p:outputLabel class="outputLabel-1" value="Subject"/>
-                    <p:selectOneMenu class="inputText-1" value="#{eventController.subject}">
+                    <p:outputLabel value="Subject"/>
+                    <p:selectOneMenu value="#{eventController.subject}">
 
                         <f:selectItem itemLabel="select" itemValue=""/>
                         <f:selectItem itemLabel="Family" itemValue="Family"/>
@@ -39,7 +39,7 @@
                     <p:commandButton class="commandButton-1" value="Create" action="#{eventController.submit}" update="fillArray"/>
                 </h:panelGrid>
 
-                <p:dataTable class="dataTable-1" value="#{eventController.events}" var="e" id="fillArray">
+                <p:dataTable value="#{eventController.events}" var="e" id="fillArray">
                     <p:column headerText="ID">#{e.id}</p:column>
                     <p:column headerText="EVENT">#{e.message}</p:column>
                     <p:column headerText="DATE">#{e.ended}</p:column>
@@ -47,6 +47,7 @@
                     <p:column headerText="CREATED">#{e.created}</p:column>
 
                     <p:column>
+                        <!-- why doesnt class="commandbutton-1" work? -->
                         <p:commandButton style="font-family: monospace" value="Edit" action="#{eventController.edit(e)}"/>
                         <p:commandButton style="font-family: monospace" value="Delete" action="#{eventController.submitDel(e)}" update="fillArray"/>
                     </p:column>
