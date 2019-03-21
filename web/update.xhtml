@@ -12,19 +12,19 @@
         <h1>MyEvents</h1>
 
         <h:form class="form-1">
-            <div class="div-1">
+            <div class="box-1">
                 <h:panelGrid columns="2">
-                    <p:outputLabel class="div-1" value="Event message"/>
-                    <p:inputText class="div-1" value="#{eventController.message}"/>
+                    <p:outputLabel class="box-1" value="Event message"/>
+                    <p:inputText class="box-1" value="#{eventController.message}"/>
 
-                    <p:outputLabel class="div-1" value="Event author"/>
-                    <p:inputText class="div-1" value="#{eventController.author}"/>
+                    <p:outputLabel class="box-1" value="Event author"/>
+                    <p:inputText class="box-1" value="#{eventController.author}"/>
 
-                    <p:outputLabel class="div-1" value="Event date"/>
-                    <p:inputText class="div-1" value="#{eventController.ended}"/>
+                    <p:outputLabel class="box-1" value="Event date"/>
+                    <p:inputText class="box-1" value="#{eventController.ended}"/>
 
-                    <p:outputLabel class="div-1" value="Subject"/>
-                    <p:selectOneMenu class="div-1" value="#{eventController.subject}">
+                    <p:outputLabel class="box-1" value="Subject"/>
+                    <p:selectOneMenu class="box-1" value="#{eventController.subject}">
 
                         <f:selectItem itemLabel="select" itemValue=""/>
                         <f:selectItem itemLabel="Family" itemValue="Family"/>
@@ -35,7 +35,7 @@
 
                     </p:selectOneMenu>
 
-                    <p:commandButton class="div-1" value="Update" action="#{eventController.submitUpd}"/>
+                    <p:commandButton class="box-1" value="Update" action="#{eventController.submitUpd}"/>
                 </h:panelGrid>
 
                 <f:metadata>

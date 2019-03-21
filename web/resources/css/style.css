@@ -1,16 +1,65 @@
 body{
-    background-color: darkgray;
+    background-color: activecaption;
+    color: #404040;
+    font-family: monospace;
 }
-.layoutUnit-1{
-    background-color: darkgray;
+h1{
+    margin-left: 8px;
 }
 div{
     font-family: monospace;
 }
-.div-1{
-    font-family: monospace;
+a{
+    text-decoration: none;
+    color: #404040;
+    font-style: italic;
+    font-size: 16px;
 }
+a:hover{
+    color: purple;
+}
+a:active{
+    color: green;
+}
+.container{
 
+}
+.box-1{
+    width: 300px;
+    background-color: lightgray;
+    font-family: monospace;
+    font-weight: bold;
+    border: 5px outset darkgray;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+.box-1 h2{
+    margin-left: 3px;
+}
+.box-2{
+    width: 1200px;
+    background-color: lightgray;
+    font-family: monospace;
+    font-weight: bold;
+    border: 10px outset darkgray;
+    border-radius: 15px;
+    margin-bottom: 5px; 
+}
+.box-2 h2{
+    margin-left: 5px;
+}
+.categories{
+    background-color: lightgray;
+    border: solid black;
+    border-radius: 5px;
+}
+.categories h2{
+    margin-left: 10px;
+}
+.categories ul{
+    padding-left: 30px; 
+    padding-bottom: 10px; 
+}
 h1{
     font-family: monospace;
 }
@@ -19,7 +68,7 @@ h1{
 }
 
 .myLayoutStyleClass .ui-layout-unit-content{
-   background: lightgray;
+    background: lightgray;
 }
 h3{
     margin-left: 10px;
@@ -32,4 +81,10 @@ h3{
 }
 .commandButton-1{
     font-family: monospace;
+}
+.table-cell-id{
+    width: 50px;
+}
+.table-cell-date{
+    width: 120px;
 }

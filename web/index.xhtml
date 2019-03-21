@@ -10,51 +10,64 @@
     </h:head>
     <h:body>
         <h1>MyEvents</h1>
-
         <h:form class="form-1">
-            
-                <h:panelGrid columns="2">
+            <div class="container">
+                <div class="box-1">
+                    <h2>Create MyEvent</h2>
+                    <h:panelGrid columns="2">
 
-                    <p:outputLabel value="Event message"/>
-                    <p:inputText placeholder="message" value="#{eventController.message}"/>
+                        <p:outputLabel value="Event message"/>
+                        <p:inputText placeholder="message" value="#{eventController.message}"/>
 
-                    <p:outputLabel value="Event author"/>
-                    <p:inputText placeholder="author" value="#{eventController.author}"/>
+                        <p:outputLabel value="Event author"/>
+                        <p:inputText placeholder="author" value="#{eventController.author}"/>
 
-                    <p:outputLabel value="Event date"/>
-                    <p:inputText placeholder="yyyy-mm-dd" value="#{eventController.ended}"/>
+                        <p:outputLabel value="Event date"/>
+                        <p:inputText placeholder="yyyy-mm-dd" value="#{eventController.ended}"/>
 
-                    <p:outputLabel value="Subject"/>
-                    <p:selectOneMenu value="#{eventController.subject}">
+                        <p:outputLabel value="Subject"/>
+                        <p:selectOneMenu value="#{eventController.subject}">
 
-                        <f:selectItem itemLabel="select" itemValue=""/>
-                        <f:selectItem itemLabel="Family" itemValue="Family"/>
-                        <f:selectItem itemLabel="Politics" itemValue="Politics"/>
-                        <f:selectItem itemLabel="Space" itemValue="Space"/>
-                        <f:selectItem itemLabel="Sports" itemValue="Sports"/>
-                        <f:selectItem itemLabel="Other" itemValue="Other"/>
+                            <f:selectItem itemLabel="select" itemValue=""/>
+                            <f:selectItem itemLabel="Family" itemValue="Family"/>
+                            <f:selectItem itemLabel="Politics" itemValue="Politics"/>
+                            <f:selectItem itemLabel="Space" itemValue="Space"/>
+                            <f:selectItem itemLabel="Sports" itemValue="Sports"/>
+                            <f:selectItem itemLabel="Other" itemValue="Other"/>
 
-                    </p:selectOneMenu>
+                        </p:selectOneMenu>
 
-                    <p:commandButton class="commandButton-1" value="Create" action="#{eventController.submit}" update="fillArray"/>
-                </h:panelGrid>
+                        <p:commandButton class="commandButton-1" value="Create" action="#{eventController.submit}" update="fillArray"/>
+                    </h:panelGrid>
+                </div>
+            </div>
 
+            <div class="box-2">
+                <h2>Update MyEvent</h2>
                 <p:dataTable value="#{eventController.events}" var="e" id="fillArray">
-                    <p:column headerText="ID">#{e.id}</p:column>
+                    <p:column class="table-cell-id" headerText="ID">#{e.id}</p:column>
                     <p:column headerText="EVENT">#{e.message}</p:column>
-                    <p:column headerText="DATE">#{e.ended}</p:column>
+                    <p:column class="table-cell-date" headerText="DATE">#{e.ended}</p:column>
                     <p:column headerText="AUTHOR">#{e.author}</p:column>
-                    <p:column headerText="CREATED">#{e.created}</p:column>
+                    <p:column class="table-cell-date" headerText="CREATED">#{e.created}</p:column>
 
-                    <p:column>
+                    <p:column style="width: 143px">
                         <!-- why doesnt class="commandbutton-1" work? -->
                         <p:commandButton style="font-family: monospace" value="Edit" action="#{eventController.edit(e)}"/>
                         <p:commandButton style="font-family: monospace" value="Delete" action="#{eventController.submitDel(e)}" update="fillArray"/>
                     </p:column>
                 </p:dataTable>
-           
+            </div>
+            <div class="categories">
+                <h2>Categories</h2>
+                <ul>
+                    <li><a class="" href="http://localhost:8080/myEvent/faces/log.xhtml">Go to MyEvents Menu</a></li>
+                    <li><a href="http://localhost:8080/myEvent/rest/event/">Rest</a></li>
+                </ul>
+            </div>
+
         </h:form>
-        <br/><a href="http://localhost:8080/myEvent/faces/log.xhtml" style="font-family: monospace">MyEvent</a>
+        <br/>
     </h:body>
 </html>
 
