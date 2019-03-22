@@ -65,6 +65,7 @@ public class EventController {
         fillArray();
     }
 
+    // när edit anropas skickas eventet och dess data till update.html
     public String edit(Event e) {
         return "update?faces-redirect=true&id=" + e.getId() + "&created=" + e.getCreated() + "&message=" 
                 + e.getMessage() + "&author=" + e.getAuthor() + "&ended=" + e.getEnded() + "&subject=" + e.getSubject();
