@@ -1,19 +1,65 @@
-body{
-    background-color: activecaption;
-    color: #404040;
+html, body{
+    background-color: darkgray;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.container{
+    background-color: #85754E;
+    font-family: monospace;
+    padding-bottom: 1px;
+}
+.container .button{
+    font-family: monospace;
+    font-size: small;
+}
+.header{
+    
+}
+.header h1{
+    font-family: Courier New;
+    margin-top: 0;
+    padding-top: 15px;
+    margin-left: 10px;
+    color: darkgray;
+    text-align: center;
+}
+.nav{
+    margin-top: 0;
+    border: solid black 1px;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    text-align: right;
+}
+.nav li{
+    list-style: none;
+}
+.nav a{
+    color: black;
+    font-size: large;
+    font-family: Courier New;
+    text-decoration: none;
+}
+.article{
+    
+}
+.section-1{
+    border: solid black 1px;
+    background: white;
+    margin: 10px;
+}
+.section-1 h2{
+    margin-left: 5px;
     font-family: monospace;
 }
-h1{
-    margin-left: 8px;
-}
-div{
-    font-family: monospace;
+.section-1 div{
+    background-color: darkgray;
+    margin: 10px;
+    border-radius: 5px;
 }
 a{
-    text-decoration: none;
-    color: #404040;
-    font-style: italic;
-    font-size: 16px;
+    
 }
 a:hover{
     color: purple;
@@ -21,47 +67,41 @@ a:hover{
 a:active{
     color: green;
 }
-.container{
-
+.section-2{
+    border: solid black 1px;
+    background: white;
+    margin: 10px;
 }
-.box-1{
-    width: 300px;
-    background-color: lightgray;
-    font-family: monospace;
-    font-weight: bold;
-    border: 5px outset darkgray;
-    border-radius: 15px;
-    margin-bottom: 5px;
-}
-.box-1 h2{
-    margin-left: 3px;
-}
-.box-2{
-    width: 1200px;
-    background-color: lightgray;
-    font-family: monospace;
-    font-weight: bold;
-    border: 10px outset darkgray;
-    border-radius: 15px;
-    margin-bottom: 5px; 
-}
-.box-2 h2{
-    margin-left: 5px;
-}
-.categories{
-    background-color: lightgray;
-    border: solid black;
+.section-2 div{
+    font-family: cursive;
+    font-size: small;
+    background-color: darkgray;
+    margin: 10px;
+    padding-bottom: 1px;
     border-radius: 5px;
 }
-.categories h2{
-    margin-left: 10px;
+.section-2 h2{
+    margin-left: 5px;
+    font-family: monospace; 
 }
-.categories ul{
-    padding-left: 30px; 
-    padding-bottom: 10px; 
+.footer{
+    background-color: #85754E;
 }
-h1{
-    font-family: monospace;
+.footer li{
+    list-style: none;
+}
+.footer a{
+    color: black;
+    font-size: small;
+    font-family: Courier New;
+    text-decoration: none;
+}
+.footer div{
+    border: solid black 1px;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    text-align: right;
 }
 .myLayoutStyleClass .ui-layout-unit-header{
     background: whitesmoke;
@@ -79,8 +119,8 @@ h3{
 .form-1 label{
     font-family: monospace;
 }
-.commandButton-1{
-    font-family: monospace;
+.form commandButton{
+    font-family: fantasy;
 }
 .table-cell-id{
     width: 50px;
