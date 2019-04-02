@@ -13,10 +13,10 @@ html, body{
     font-family: monospace;
     font-size: small;
 }
-.header{
+header{
     
 }
-.header h1{
+header h1{
     font-family: Courier New;
     margin-top: 0;
     padding-top: 15px;
@@ -24,7 +24,7 @@ html, body{
     color: darkgray;
     text-align: center;
 }
-.nav{
+nav{
     margin-top: 0;
     border: solid black 1px;
     background-color: white;
@@ -32,30 +32,30 @@ html, body{
     padding: 10px;
     align-self: flex-end;
 }
-.nav li{
+nav li{
     display: flex;
 	flex-direction: row;
     list-style: none;
 }
-.nav a{
+nav a{
     color: black;
     font-size: large;
     font-family: Courier New;
     text-decoration: none;
 }
-.article{
+section{
     
 }
-.section-1{
+article{
     border: solid black 1px;
     background: white;
     margin: 10px;
 }
-.section-1 h2{
+article h2{
     margin-left: 5px;
     font-family: monospace;
 }
-.section-1 div{
+article div{
     background-color: darkgray;
     margin: 10px;
     border-radius: 5px;
@@ -69,12 +69,12 @@ a:hover{
 a:active{
     color: green;
 }
-.section-2{
+aside{
     border: solid black 1px;
     background: white;
     margin: 10px;
 }
-.section-2 div{
+aside div{
     font-family: cursive;
     font-size: small;
     background-color: darkgray;
@@ -82,23 +82,23 @@ a:active{
     padding-bottom: 1px;
     border-radius: 5px;
 }
-.section-2 h2{
+aside h2{
     margin-left: 5px;
     font-family: monospace; 
 }
-.footer{
+footer{
     background-color: #85754E;
 }
-.footer li{
+footer li{
     list-style: none;
 }
-.footer a{
+footer a{
     color: black;
     font-size: small;
     font-family: Courier New;
     text-decoration: none;
 }
-.footer div{
+footer div{
     border: solid black 1px;
     background-color: white;
     padding: 10px;

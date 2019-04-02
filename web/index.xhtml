@@ -9,22 +9,23 @@
         <h:outputStylesheet library="css" name="style.css"/>
     </h:head>
     <h:body>
+<h:form class="form-1">
 
-        <h:form class="form-1">
-            <div class="container">
+        <div class="container">
 
-                <div class="header">
-                    <h1>MyEvent</h1>
-                    <div class="nav">
-                        <li><a class="" href="http://localhost:8080/myEvent/faces/log.xhtml">Menu</a></li>
-                        <li><a href="http://localhost:8080/myEvent/faces/index.xhtml">Home</a></li>
-                    </div>
-                </div>
-                <div class="article">
+            <header>
+                <h1>MyEvent</h1>
+                <nav>
+                    <li><a class="" href="http://localhost:8080/myEvent/faces/log.xhtml">Menu</a></li>
+                    <li><a href="http://localhost:8080/myEvent/faces/index.xhtml">Home</a></li>
+                </nav>
+            </header>
+            <section>
 
-                    <div class="section-1">
-                        <div>
-                            <h2>Create MyEvent</h2>
+                <article>
+
+                    <div>
+                        <h2>Create MyEvent</h2>
                             <h:panelGrid columns="2">
 
                                 <p:outputLabel value="Event message"/>
@@ -51,13 +52,14 @@
                                 <p:commandButton value="Create" action="#{eventController.submit}" update="fillArray" styleClass="button"/>
 
                             </h:panelGrid>
-                        </div>
-
                     </div>
 
-                    <div class="section-2">
-                        <div>
-                            <h2>Update MyEvent</h2>
+                </article>
+
+                <aside>
+                    <div>
+                        <h2>Update MyEvent</h2>
+                        
                             <p:dataTable value="#{eventController.events}" var="e" id="fillArray">
                                 <p:column class="table-cell-id" headerText="ID">#{e.id}</p:column>
                                 <p:column headerText="EVENT">#{e.message}</p:column>
@@ -70,20 +72,21 @@
                                     <p:commandButton value="Delete" action="#{eventController.submitDel(e)}" update="fillArray" styleClass="button"/>
                                 </p:column>
                             </p:dataTable>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="footer">
-
-                    <div>
-                        <li><a href="http://localhost:8080/myEvent/rest/event/">Rest</a></li>
+                        
                     </div>
 
-                </div>
-            </div>
+                </aside>
+            </section>
+            <footer>
 
-        </h:form>
+                <div>
+                    <li><a href="http://localhost:8080/myEvent/rest/event/">Rest</a></li>
+                </div>
+
+            </footer>
+        </div>
+
+</h:form>
     </h:body>
 </html>
 
