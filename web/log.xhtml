@@ -13,25 +13,18 @@
                 <h:outputStylesheet library="css" name="style.css"/>
             </f:facet>
         </h:head>
-
         <h:body>
-
             <div class="container">
-                <div class="header">
+                <header>
                     <h1>MyEvent</h1>
-                    <div class="nav">
-                        <li><a class="" href="http://localhost:8080/myEvent/faces/log.xhtml">Menu</a></li>
+                    <nav>
                         <li><a href="http://localhost:8080/myEvent/faces/index.xhtml">Home</a></li>
-                    </div>
-                </div>
-
-                <div class="article">
-
-                    <div class="article-1">
+                        <li><a class="" href="http://localhost:8080/myEvent/faces/log.xhtml">Menu</a></li>
+                    </nav>
+                </header>
+                <section>
+                    <article>
                         <div>
-
-                            
-
                             <p:menu>
                                 <p:submenu label="MyEvent">
                                     <p:menuitem value="Family" url="http://localhost:8080/myEvent/faces/family.xhtml" />
@@ -39,14 +32,13 @@
                                     <p:menuitem value="Space" url="http://localhost:8080/myEvent/faces/space.xhtml" />
                                     <p:menuitem value="Sports" url="http://localhost:8080/myEvent/faces/sports.xhtml" />
                                     <p:menuitem value="Other" url="http://localhost:8080/myEvent/faces/other.xhtml" />
-
                                 </p:submenu>
-
                             </p:menu>
-
-
+                        </div>
+                    </article>
+                    <aside>
+                        <div>
                             <h3>MyEvent</h3>
-
                             <p:dataTable value="#{eventController.events}" var="e">
                                 <p:column headerText="#">#{e.id}</p:column>
                                 <p:column headerText="EVENT">#{e.message}</p:column>
@@ -54,26 +46,16 @@
                                 <p:column headerText="AUTHOR">#{e.author}</p:column>
                                 <p:column headerText="CREATED">#{e.created}</p:column>
                             </p:dataTable>
-
                         </div>
-
-                    </div>
-                    <div class="footer">
-
+                    </aside>>
+                    <footer>
                         <div>
                             <li><a href="http://localhost:8080/myEvent/rest/event/">Rest</a></li>
                         </div>
-
-                    </div>
-
-                </div>
-
+                    </footer>
+                </section>
             </div>
-
-
-
         </h:body>
-
     </f:view>
 </html>
 

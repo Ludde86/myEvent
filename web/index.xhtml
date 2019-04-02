@@ -7,27 +7,23 @@
     <h:head>
         <title>MyEvent</title>
         <h:outputStylesheet library="css" name="style.css"/>
+        <link rel="stylesheet" href="css/style.css" />
     </h:head>
     <h:body>
-<h:form class="form-1">
-
-        <div class="container">
-
-            <header>
-                <h1>MyEvent</h1>
-                <nav>
-                    <li><a class="" href="http://localhost:8080/myEvent/faces/log.xhtml">Menu</a></li>
-                    <li><a href="http://localhost:8080/myEvent/faces/index.xhtml">Home</a></li>
-                </nav>
-            </header>
-            <section>
-
-                <article>
-
-                    <div>
-                        <h2>Create MyEvent</h2>
+        <h:form class="form-1">
+            <div class="container">
+                <header>
+                    <h1>MyEvent</h1>
+                    <nav>
+                        <li><a href="http://localhost:8080/myEvent/faces/index.xhtml">Home</a></li>
+                        <li><a class="" href="http://localhost:8080/myEvent/faces/log.xhtml">Menu</a></li>
+                    </nav>
+                </header>
+                <section>
+                    <article>
+                        <div>
+                            <h2>Create MyEvent</h2>
                             <h:panelGrid columns="2">
-
                                 <p:outputLabel value="Event message"/>
                                 <p:inputText placeholder="message" value="#{eventController.message}"/>
 
@@ -48,18 +44,41 @@
                                     <f:selectItem itemLabel="Other" itemValue="Other"/>
 
                                 </p:selectOneMenu>
-
                                 <p:commandButton value="Create" action="#{eventController.submit}" update="fillArray" styleClass="button"/>
-
                             </h:panelGrid>
-                    </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="test-div">
+                            <h2>Create MyEvent v2</h2>
+                            <label for="message">Event message</label> 
+                            <input name="message" id="message" placeholder="message" value="#{eventController.message}"/><br></br>
 
-                </article>
+                            <label for="author">Event author</label>
+                            <input name="author" id="author" placeholder="author" value="#{eventController.author}"/><br></br>
 
-                <aside>
-                    <div>
-                        <h2>Update MyEvent</h2>
-                        
+                            <label for="ended">Event date</label>
+                            <input name="ended" id="ended" placeholder="yyyy-mm-dd" value="#{eventController.ended}"/><br></br>
+
+                            <label for="subject">Select</label><br></br>
+                            <select name="subject" id="subject" value="#{eventController.subject}">
+
+                                    <option itemLabel="select" itemValue="">Select</option>
+                                    <option itemLabel="Family" itemValue="Family">Family</option>
+                                    <option itemLabel="Politics" itemValue="Politics">Politics</option>
+                                    <option itemLabel="Space" itemValue="Space">Space</option>
+                                    <option itemLabel="Sports" itemValue="Sports">Sports</option>
+                                    <option itemLabel="Other" itemValue="Other">Other</option>
+
+                                </select><br></br>
+                                <input type="submit" value="Create" />
+                                <p:commandButton value="Create" action="#{eventController.submit}" update="fillArray" styleClass="button"/>
+                        </div>
+                    </article>
+                    <aside>
+                        <div>
+                            <h2>Update MyEvent</h2>
+
                             <p:dataTable value="#{eventController.events}" var="e" id="fillArray">
                                 <p:column class="table-cell-id" headerText="ID">#{e.id}</p:column>
                                 <p:column headerText="EVENT">#{e.message}</p:column>
@@ -72,21 +91,16 @@
                                     <p:commandButton value="Delete" action="#{eventController.submitDel(e)}" update="fillArray" styleClass="button"/>
                                 </p:column>
                             </p:dataTable>
-                        
+                        </div>
+                    </aside>
+                </section>
+                <footer>
+                    <div>
+                        <li><a href="http://localhost:8080/myEvent/rest/event/">Rest</a></li>
                     </div>
-
-                </aside>
-            </section>
-            <footer>
-
-                <div>
-                    <li><a href="http://localhost:8080/myEvent/rest/event/">Rest</a></li>
-                </div>
-
-            </footer>
-        </div>
-
-</h:form>
+                </footer>
+            </div>
+        </h:form>
     </h:body>
 </html>
 

@@ -130,3 +130,19 @@ h3{
 .table-cell-date{
     width: 120px;
 }
+.test-div label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: left; /*Change to right here if you want it close to the inputs*/
+}
+.test-div input {
+  display: inline-block;
+  float: left;
+}
+.test-div select {
+  display: inline-block;
+  float: left;
+}
+
