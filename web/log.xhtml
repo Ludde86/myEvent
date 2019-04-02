@@ -16,41 +16,61 @@
 
         <h:body>
 
-            <p:layout fullPage="true">
+            <div class="container">
+                <div class="header">
+                    <h1>MyEvent</h1>
+                    <div class="nav">
+                        <li><a class="" href="http://localhost:8080/myEvent/faces/log.xhtml">Menu</a></li>
+                        <li><a href="http://localhost:8080/myEvent/faces/index.xhtml">Home</a></li>
+                    </div>
+                </div>
 
-                <p:layoutUnit class="myLayoutStyleClass" position="south" size="100" closable="true" collapsible="true">
-                    <a href="http://localhost:8080/myEvent/faces/index.xhtml" style="font-family: monospace">Back to Event Management</a><br/>
-                    <a href="http://localhost:8080/myEvent/rest/event/" style="font-family: monospace">Rest</a>
-                </p:layoutUnit>
+                <div class="article">
 
-                <p:layoutUnit class="myLayoutStyleClass" position="west" size="175" header="Hide Log Menu" collapsible="true">
-                    <p:menu>
-                        <p:submenu label="MyEvent">
-                            <p:menuitem value="Family" url="http://localhost:8080/myEvent/faces/family.xhtml" />
-                            <p:menuitem value="Politics" url="http://localhost:8080/myEvent/faces/politics.xhtml" />
-                            <p:menuitem value="Space" url="http://localhost:8080/myEvent/faces/space.xhtml" />
-                            <p:menuitem value="Sports" url="http://localhost:8080/myEvent/faces/sports.xhtml" />
-                            <p:menuitem value="Other" url="http://localhost:8080/myEvent/faces/other.xhtml" />
+                    <div class="section-1">
+                        <div>
 
-                        </p:submenu>
+                            
 
-                    </p:menu>
-                </p:layoutUnit>
+                            <p:menu>
+                                <p:submenu label="MyEvent">
+                                    <p:menuitem value="Family" url="http://localhost:8080/myEvent/faces/family.xhtml" />
+                                    <p:menuitem value="Politics" url="http://localhost:8080/myEvent/faces/politics.xhtml" />
+                                    <p:menuitem value="Space" url="http://localhost:8080/myEvent/faces/space.xhtml" />
+                                    <p:menuitem value="Sports" url="http://localhost:8080/myEvent/faces/sports.xhtml" />
+                                    <p:menuitem value="Other" url="http://localhost:8080/myEvent/faces/other.xhtml" />
 
-                <p:layoutUnit class="myLayoutStyleClass" position="center">
-                    
-                    <h3>MyEvent</h3>
-                    
-                    <p:dataTable value="#{eventController.events}" var="e">
-                        <p:column headerText="#">#{e.id}</p:column>
-                        <p:column headerText="EVENT">#{e.message}</p:column>
-                        <p:column headerText="DATE">#{e.ended}</p:column>
-                        <p:column headerText="AUTHOR">#{e.author}</p:column>
-                        <p:column headerText="CREATED">#{e.created}</p:column>
-                    </p:dataTable>
-                </p:layoutUnit>
+                                </p:submenu>
 
-            </p:layout>
+                            </p:menu>
+
+
+                            <h3>MyEvent</h3>
+
+                            <p:dataTable value="#{eventController.events}" var="e">
+                                <p:column headerText="#">#{e.id}</p:column>
+                                <p:column headerText="EVENT">#{e.message}</p:column>
+                                <p:column headerText="DATE">#{e.ended}</p:column>
+                                <p:column headerText="AUTHOR">#{e.author}</p:column>
+                                <p:column headerText="CREATED">#{e.created}</p:column>
+                            </p:dataTable>
+
+                        </div>
+
+                    </div>
+                    <div class="footer">
+
+                        <div>
+                            <li><a href="http://localhost:8080/myEvent/rest/event/">Rest</a></li>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
 
         </h:body>
 
